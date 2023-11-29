@@ -1,5 +1,7 @@
 package com.shop.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +14,12 @@ import com.shop.domain.UsersVO;
 import com.shop.service.JoinService;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
 
 @Controller
 @RequestMapping(value="/shop/*")
 @AllArgsConstructor
+@Log4j
 public class JoinController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(JoinController.class);
@@ -23,49 +27,50 @@ public class JoinController {
 	@Autowired
 	private JoinService joinservice;
 	
-	//회원가입 페이지 이동
+	//�쉶�썝媛��엯 �럹�씠吏� �씠�룞
 	@RequestMapping(value="/join", method=RequestMethod.GET)
 	public void loginGET() {
-		logger.info("회원가입 페이지 진입");
+		logger.info("�쉶�썝媛��엯 �럹�씠吏� 吏꾩엯");
 	}
 	
-	//회원가입
+	//�쉶�썝媛��엯
 	@RequestMapping(value="/join", method=RequestMethod.POST)
 	public String joinPOST(UsersVO user) throws Exception{
 		
-		logger.info("join 진입");
+		logger.info("join 吏꾩엯");
 		
 		
-		// 회원가입 서비스 실행
+		// �쉶�썝媛��엯 �꽌鍮꾩뒪 �떎�뻾
 		joinservice.insertUser(user);
 		
-		logger.info("join Service 성공");
+		logger.info("join Service �꽦怨�");
 		
 		return "redirect:/";
 		
 	}
 	
-	//로그인 페이지 이동
+	//濡쒓렇�씤 �럹�씠吏� �씠�룞
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public void joinGET() {
-		logger.info("로그인 페이지 진입");
+		logger.info("濡쒓렇�씤 �럹�씠吏� 吏꾩엯");
 	}
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public void loginPOST() {
-		logger.info("login Service 성공");
+		logger.info("login Service �꽦怨�");
 	}
 	
-	//아이디 중복 검사 
+	//�븘�씠�뵒 以묐났 寃��궗 
 	@RequestMapping(value = "/userIdCk", method=RequestMethod.POST)
 	@ResponseBody
 	public String userIdCkPost(String userId) throws Exception {
-		logger.info("userIdCk() 진입");
+		log.info("테스트중입니다.");
+		logger.info("userIdCk() 吏꾩엯");
 		int result = joinservice.idCheck(userId);
-		logger.info("결과값 = "+result);
+		logger.info("寃곌낵媛� = "+result);
 		if(result != 0) {
-			return "fail"; //중복 아이디O
+			return "fail"; //以묐났 �븘�씠�뵒O
 		} else {
-			return "success"; //중복 아이디X
+			return "success"; //以묐났 �븘�씠�뵒X
 		}
 	}
 }
