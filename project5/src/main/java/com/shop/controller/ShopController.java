@@ -65,6 +65,22 @@ public class ShopController {
             return "error";
 		}
 	}
+	@RequestMapping(value = "shop/detail", method = RequestMethod.GET)
+	public String detail(Integer prodCnt, String prodNo, Model model) throws Exception {
+	    // prodCnt가 null이면 0으로 설정
+	    if (prodCnt == null) {
+	        prodCnt = 0;
+	    }
+	    // prodNo가 null이면 처리하거나 로깅
+	    if (prodNo == null) {
+	        log.info("prodNo == null");
+	    } else {
+	        service.updateProdCnt(prodCnt);
+	        ProductVO proddetail = service.prodDetail(prodNo);
+	        model.addAttribute("prodd", proddetail);
+	    }
+	    return "shop/detail";
+	}
 	@RequestMapping(value="shop/cart", method = RequestMethod.GET)
 	public void cart() {
 		log.info("========cart========");

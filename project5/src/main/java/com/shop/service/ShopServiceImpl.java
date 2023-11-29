@@ -75,8 +75,13 @@ public class ShopServiceImpl implements ShopService {
 	}
 	
 	@Override
-	public ProductVO prodDetail(int prodNo) throws Exception{
+	public ProductVO prodDetail(String prodNo) throws Exception{
 		return mapper.prodDetail(prodNo);
 	}
-
+	
+	@Override
+	public int updateProdCnt(int prodCnt) throws Exception {
+		return mapper.updateProdCnt(prodCnt);
+	}
+	
 }

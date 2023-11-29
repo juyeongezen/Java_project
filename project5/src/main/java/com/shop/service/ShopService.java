@@ -32,5 +32,8 @@ public interface ShopService {
 	public List<ProductVO> prodList() throws Exception;
 	
 	//선택목록(글읽기)을 위한 메소드
-	public ProductVO prodDetail(int prodNo) throws Exception;
+	public ProductVO prodDetail(String prodNo) throws Exception;
+	
+	//조회수 증가를 위한 메소드
+	public int updateProdCnt(int prodCnt) throws Exception;
 }

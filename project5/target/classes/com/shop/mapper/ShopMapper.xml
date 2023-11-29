@@ -71,6 +71,13 @@
 		where prodNo = #{prodNo}
 	</select>
 	
+	<!-- 조회수 증가 -->
+	<update id="updateProdCnt" parameterType="java.lang.Integer">
+		update product
+		   set prodCnt = prodCnt + 1
+		 where prodNo = #{prodNo}
+	</update>
+	
 	
 	<!-- ==================================================================== -->
 	<!-- 회원 -->
