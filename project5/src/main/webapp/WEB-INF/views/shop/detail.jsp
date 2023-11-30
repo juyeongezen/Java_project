@@ -8,6 +8,7 @@
 <%@include file="../includes/src.jsp" %>
 </head>
 <body>
+	
 	<%@include file="../includes/header.jsp" %>
 	
 	<!-- Hero Section Begin -->
@@ -62,7 +63,6 @@
                             </div>
                         </div>
                         <a href="#" class="primary-btn">ADD TO CART</a>
-                        <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
                         <ul>
                             <li><b>재고</b> <span><%-- ${code.} --%></span></li>
                             <li><b>배송</b> <span>2일 예상 <samp>무료배송</samp></span></li>
