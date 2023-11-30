@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,6 +65,15 @@ public class ShopController {
 			logger.error("Error fetching prodlist", e);
             return "error";
 		}
+	}
+	@RequestMapping(value = "shop/detail", method = RequestMethod.GET)
+	public String detail(Integer prodCnt, String prodNo, Model model) throws Exception {
+	    // prodCnt가 null이면 0으로 설정
+	    service.updateProdCnt(prodCnt);
+        ProductVO proddetail = service.prodDetail(prodNo);
+        model.addAttribute("prodd", proddetail);
+	    
+	    return "shop/detail";
 	}
 	@RequestMapping(value="shop/cart", method = RequestMethod.GET)
 	public void cart() {

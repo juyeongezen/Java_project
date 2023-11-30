@@ -11,18 +11,17 @@
 
 	<%@include file="../includes/header.jsp" %>
 	
-	<div id="contents">
+	<div id="contents" style="padding: 0 0 80px;">
 	
 		<div class="page_title fs60">My page</div>
-		<ul class="mypage_tab"><li class="home"><a href="/myshop/index.html" class="fs15">홈</a></li>
-			<li class="order on"><a href="/myshop/order/list.html" class="fs15">주문내역</a></li>
-			<li class="coupon"><a href="/myshop/coupon/coupon.html" class="fs15">쿠폰</a></li>
-			<li class="mileage"><a href="/myshop/mileage/historyList.html" class="fs15">적립금</a></li>
-			<li class="modify"><a href="/member/modify.html" class="fs15">회원정보</a></li>
-			<li class="addr"><a href="/myshop/addr/list.html" class="fs15">주소록</a></li>
-			<li class="board"><a href="/myshop/board_list.html" class="fs15">게시물관리</a></li>
-		</ul><div class="page_wrap">
-		    <div class="xans-element- xans-myshop xans-myshop-orderhistorytab ec-base-tab "><ul class="menu col-2" style="margin-bottom:0;">
+		<ul class="mypage_tab"><li class="home"><a href="/shop/mypage" class="fs15">홈</a></li>
+			<li class="order on"><a href="/shop/mypage-order" class="fs15">주문내역</a></li>
+			<li class="mileage"><a href="/shop/mypage-point" class="fs15">적립금</a></li>
+			<li class="modify"><a href="/shop/mypage-user" class="fs15">회원정보</a></li>
+			<li class="board"><a href="/shop/mypage-content" class="fs15">게시물관리</a></li>
+		</ul>
+		<div class="page_wrap">
+		    <div class="xans-element- xans-myshop xans-myshop-orderhistorytab ec-base-tab "><ul class="menu col-2" style="margin-bottom:0;max-width: 100%;padding: 0;">
 		<li class="tab_class selected"><a href="/myshop/order/list.html?history_start_date=2023-08-30&amp;history_end_date=2023-11-28&amp;past_year=2022">주문내역조회 (<span id="xans_myshop_total_orders">0</span>)</a></li>
 		            <li class="tab_class_cs"><a href="/myshop/order/list.html?mode=cs&amp;history_start_date=2023-08-30&amp;history_end_date=2023-11-28&amp;past_year=2022">취소/반품/교환 내역 (<span id="xans_myshop_total_orders_cs">0</span>)</a></li>
 		        </ul>
@@ -43,10 +42,10 @@
 		</select>            </div>
 		            <div class="period_layout">
 		                <span class="period">
-		                    <a href="#none" class="fs15" days="00">오늘</a>/
-		                    <a href="#none" class="fs15" days="07">1주일</a>/
-		                    <a href="#none" class="fs15" days="30">1개월</a>/
-		                    <a href="#none" class="fs15" days="90">3개월</a>/
+		                    <a href="#none" class="fs15" days="00">오늘</a>
+		                    <a href="#none" class="fs15" days="07">1주일</a>
+		                    <a href="#none" class="fs15" days="30">1개월</a>
+		                    <a href="#none" class="fs15" days="90">3개월</a>
 		                    <a href="#none" class="fs15" days="180">6개월</a>
 		                </span>
 		            </div>
@@ -56,6 +55,7 @@
 		                <input alt="조회" id="order_search_btn" type="image" src="//img.echosting.cafe24.com/skin/admin_ko_KR/myshop/btn_search.gif">            </div>
 		        </fieldset>
 		<ul class="fs10">
+		<li></li>
 		<li class="displaynone">기본적으로 최근 3개월간의 자료가 조회되며, 기간 검색시 지난 주문내역을 조회하실 수 있습니다.</li>
 		            <li class=" ">기본적으로 최근 3개월간의 자료가 조회되며, 기간 검색시 주문처리완료 후 36개월 이내의 주문내역을 조회하실 수 있습니다.</li>
 		            <li class=" ">완료 후 36개월 이상 경과한 주문은 <a href="javascript:OrderHistory.searchPast(false)">[과거주문내역]</a>에서 확인할 수 있습니다.</li>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,17 +13,17 @@
 	<%@include file="../includes/header.jsp" %>
 
 	<div id="container">
-        <div id="contents">
+        <div id="contents" style="padding: 0 0 80px;">
                     
 			<div class="page_title fs60">My page</div>
-			<ul class="mypage_tab"><li class="home"><a href="/myshop/index.html" class="fs15">홈</a></li>
-				<li class="order"><a href="/myshop/order/list.html" class="fs15">주문내역</a></li>
-				<li class="coupon"><a href="/myshop/coupon/coupon.html" class="fs15">쿠폰</a></li>
-				<li class="mileage"><a href="/myshop/mileage/historyList.html" class="fs15">적립금</a></li>
-				<li class="modify on"><a href="/member/modify.html" class="fs15">회원정보</a></li>
-				<li class="addr"><a href="/myshop/addr/list.html" class="fs15">주소록</a></li>
-				<li class="board"><a href="/myshop/board_list.html" class="fs15">게시물관리</a></li>
-			</ul><div class="page_wrap">
+			<ul class="mypage_tab">
+				<li class="home"><a href="/shop/mypage" class="fs15">홈</a></li>
+				<li class="order"><a href="/shop/mypage-order" class="fs15">주문내역</a></li>
+				<li class="mileage"><a href="/shop/mypage-point" class="fs15">적립금</a></li>
+				<li class="modify on"><a href="/shop/mypage-user" class="fs15">회원정보</a></li>
+				<li class="board"><a href="/shop/mypage-content" class="fs15">게시물관리</a></li>
+			</ul>
+			<div class="page_wrap">
 				<div class="mp_title fs15">회원정보</div>
 			
 			    <div class="xans-element- xans-myshop xans-myshop-asyncbenefit"><div class="ec-base-box typeMember gMessage displaynone">
@@ -314,16 +315,16 @@
 			            </li>
 			        
 			            <li id="fmodify_street_wrap" class="displaynone">
-			                <input id="street_name" name="street_name" placeholder="ADDR.COMMON.FORMATSTREET.KR" fw-filter="" class="inputTypeText displaynone" type="text" size="30" maxlength="50" disabled="" style="display: none;">
+			                <input id="street_name" name="street_name" placeholder="ADDR.COMMON.FORMATSTREET.KR" fw-filter="" class="inputTypeText displaynone" type="text" size="30" maxlength="50" disabled="" style="display: none;">
 			            </li>
 			        
 			            <li id="fmodify_area_wrap" class="ec-address-area displaynone" style="display: none;">
 			                <select id="si_name_addr" name="si_name_addr" class="displaynone" disabled="" fw-filter="" style="display: none;">
-			                                <option value="">ADDR.COMMON.FORMATSELECT.STATE.KR</option>
+			                                <option value="">ADDR.COMMON.FORMATSELECT.STATE.KR</option>
 			                            </select><select id="ci_name_addr" name="ci_name_addr" class="displaynone" disabled="" fw-filter="" style="display: none;">
-			                            <option value="">ADDR.COMMON.FORMATSELECT.CITY.KR</option>
+			                            <option value="">ADDR.COMMON.FORMATSELECT.CITY.KR</option>
 			                        </select><select id="gu_name_addr" name="gu_name_addr" class="displaynone" disabled="" fw-filter="" style="display: none;">
-			                            <option value="">ADDR.COMMON.FORMATSELECT.STREET.KR</option>
+			                            <option value="">ADDR.COMMON.FORMATSELECT.STREET.KR</option>
 			                        </select>
 			            </li>
 			        

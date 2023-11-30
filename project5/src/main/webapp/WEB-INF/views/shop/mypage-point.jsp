@@ -11,17 +11,17 @@
 
 	<%@include file="../includes/header.jsp" %>
 
-	<div id="contents">
+	<div id="contents" style="padding: 0 0 80px;">
                     
 		<div class="page_title fs60">My page</div>
-		<ul class="mypage_tab"><li class="home"><a href="/myshop/index.html" class="fs15">홈</a></li>
-			<li class="order"><a href="/myshop/order/list.html" class="fs15">주문내역</a></li>
-			<li class="coupon"><a href="/myshop/coupon/coupon.html" class="fs15">쿠폰</a></li>
-			<li class="mileage on"><a href="/myshop/mileage/historyList.html" class="fs15">적립금</a></li>
-			<li class="modify"><a href="/member/modify.html" class="fs15">회원정보</a></li>
-			<li class="addr"><a href="/myshop/addr/list.html" class="fs15">주소록</a></li>
-			<li class="board"><a href="/myshop/board_list.html" class="fs15">게시물관리</a></li>
-		</ul><div class="page_wrap">
+		<ul class="mypage_tab">
+			<li class="home"><a href="/shop/mypage" class="fs15">홈</a></li>
+			<li class="order"><a href="/shop/mypage-order" class="fs15">주문내역</a></li>
+			<li class="mileage on"><a href="/shop/mypage-point" class="fs15">적립금</a></li>
+			<li class="modify"><a href="/shop/mypage-user" class="fs15">회원정보</a></li>
+			<li class="board"><a href="/shop/mypage-content" class="fs15">게시물관리</a></li>
+		</ul>
+		<div class="page_wrap">
 		    <div class="xans-element- xans-myshop xans-myshop-mileagehistorypackage "><!--css(/css/module/myshop/mileageHistoryPackage.css)-->
 		<div class="ec-base-tab">
 		            <ul class="menu col-3">
