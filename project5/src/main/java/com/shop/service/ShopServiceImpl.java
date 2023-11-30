@@ -80,8 +80,8 @@ public class ShopServiceImpl implements ShopService {
 	}
 	
 	@Override
-	public int updateProdCnt(int prodCnt) throws Exception {
-		return mapper.updateProdCnt(prodCnt);
+	public int updateProdCnt(String prodNo) throws Exception {
+		return mapper.updateProdCnt(prodNo);
 	}
 	
 }
