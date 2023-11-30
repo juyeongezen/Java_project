@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,17 +69,10 @@ public class ShopController {
 	@RequestMapping(value = "shop/detail", method = RequestMethod.GET)
 	public String detail(Integer prodCnt, String prodNo, Model model) throws Exception {
 	    // prodCnt가 null이면 0으로 설정
-	    if (prodCnt == null) {
-	        prodCnt = 0;
-	    }
-	    // prodNo가 null이면 처리하거나 로깅
-	    if (prodNo == null) {
-	        log.info("prodNo == null");
-	    } else {
-	        service.updateProdCnt(prodCnt);
-	        ProductVO proddetail = service.prodDetail(prodNo);
-	        model.addAttribute("prodd", proddetail);
-	    }
+	    service.updateProdCnt(prodCnt);
+        ProductVO proddetail = service.prodDetail(prodNo);
+        model.addAttribute("prodd", proddetail);
+	    
 	    return "shop/detail";
 	}
 	@RequestMapping(value="shop/cart", method = RequestMethod.GET)

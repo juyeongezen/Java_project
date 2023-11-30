@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Shop</title>
 <%@include file="../includes/src.jsp" %>
 </head>
 <body>
